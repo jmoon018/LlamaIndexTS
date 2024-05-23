@@ -280,7 +280,7 @@ export class PGVectorStore
 
     const sql = `SELECT 
         v.*, 
-        embeddings <=> $1 s 
+        embeddings <-> $1 s
       FROM ${this.schemaName}.${this.tableName} v
       ${where}
       ORDER BY s 
